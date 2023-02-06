@@ -1,37 +1,21 @@
 {
-  "name": "@karmaniverous/npm-package-template",
-  "bin": {
-    "mycli": "bin/mycli/index.js"
-  },
+  "name": "@veterancrowd/wrapped-api",
   "version": "0.5.9",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/karmaniverous/npm-package-template"
+    "url": "https://github.com/VeteranCrowd/wrapped-api"
   },
   "author": "Jason G. Williscroft",
   "bugs": {
-    "url": "https://github.com/karmaniverous/npm-package-template/issues"
+    "url": "https://github.com/VeteranCrowd/wrapped-api/issues"
   },
-  "description": "An ES6 NPM package project template featuring a CLI, test support, automated API docs, release management & more!",
-  "homepage": "https://github.com/karmaniverous/npm-package-template#readme",
-  "keywords": [
-    "chai",
-    "docs",
-    "es6",
-    "javascript",
-    "npm",
-    "mocha",
-    "package",
-    "release",
-    "testing",
-    "template"
-  ],
-  "license": "BSD-3-Clause",
+  "description": "An Axios instance wrapped to provide logging and other services.",
+  "homepage": "https://github.com/VeteranCrowd/wrapped-api#readme",
+  "keywords": [],
   "dependencies": {
-    "commander": "^9.4.1",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
@@ -77,14 +61,14 @@
       "release": true
     },
     "npm": {
-      "publish": true
+      "publish": false
     }
   },
   "scripts": {
-    "lint": "eslint lib/** bin/**",
+    "lint": "eslint lib/**",
     "test": "mocha",
     "build": "babel lib -d dist/default/lib --delete-dir-on-start --config-file ./dist/default/.babelrc",
-    "doc": "jsdoc2md -c doc/jsdoc.config.json -f lib/**/*.* -t doc/api-template.hbs > doc/3-api.jsdoc2.md && concat-md doc --hide-anchor-links > README.md",
+    "doc": "jsdoc2md -c doc/jsdoc.config.json -f lib/**/*.* -t doc/api-template.hbs > doc/2-api.jsdoc2.md && concat-md doc --hide-anchor-links > README.md",
     "package": "npm run lint && npm run test && npm run build && npm run doc",
     "release": "npm run package && getdotenv -- release-it"
   },
