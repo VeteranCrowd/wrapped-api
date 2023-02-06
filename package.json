@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/VeteranCrowd/wrapped-api/issues"
   },
-  "description": "An Axios instance wrapped to provide logging and other services.",
+  "description": "An Axios instance wrapped to provide consistent logging and other services.",
   "homepage": "https://github.com/VeteranCrowd/wrapped-api#readme",
   "keywords": [],
   "dependencies": {
