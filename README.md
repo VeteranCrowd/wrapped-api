@@ -1,79 +1,134 @@
-# NPM Package Template
+# WrappedApi
 
-You wrote a sweet piece of code! Releasing it on [NPM](https://www.npmjs.com/)
-seems like the obvious next step. Right?
+The **WrappedApi** class creates a thin layer over an Axios object, intended to
+standardize Axios usage and provide a consistent interface for logging and
+ancillary services.
 
-_Try it!_ Not as easy to do as you might think. At high quality. From scratch.
+To install:
 
-So here's a plug-and-play NPM package template that offers the following
-features:
-
-- Tree-shakable support for the latest ES6 goodies with
-  [`eslint`](https://www.npmjs.com/package/eslint) _uber alles_.
-
-- CJS distributions targeting specific browser support scenarios.
-
-- Command line interfaces for your widget with
-  [`commander`](https://www.npmjs.com/package/commander).
-
-- Automated [`lodash`](https://www.npmjs.com/package/lodash) cherry-picking with
-  [`babel-plugin-lodash`](https://www.npmjs.com/package/babel-plugin-lodash).
-
-- [`mocha`](https://www.npmjs.com/package/mocha) &
-  [`chai`](https://www.npmjs.com/package/chai) for testing, with examples, and a
-  sweet testing console.
-
-- In-code access to
-  [`package.json`](https://github.com/karmaniverous/npm-package-template/blob/main/package.json)
-  data, with no warnings to ignore.
-
-- Code formatting at every save & paste with
-  [`prettier`](https://www.npmjs.com/package/prettier).
-
-- Automated documentation of your API with
-  [`jsdoc-to-markdown`](https://www.npmjs.com/package/jsdoc-to-markdown) and
-  assembly of your README with
-  [`concat-md`](https://www.npmjs.com/package/concat-md).
-
-- One-button release to GitHub & publish to NPM with
-  [`release-it`](https://www.npmjs.com/package/release-it).
-
-**[Click here](https://karmanivero.us/blog/npm-package-template/) for full
-documentation & instructions!**
-
-_If you want to create a React component in an NPM package, use my
-[React Component NPM Package Template](https://github.com/karmaniverous/react-component-npm-package-template)
-instead!_
-
-# Command Line Interface
-
-```text
-Usage: mycli [options]
-
-Foos your bar.
-
-Options:
-  -b, --bar <string>  foo what?
-  -h, --help          display help for command
 ```
+npm install https://github.com/VeteranCrowd/wrapped-api
+```
+
+See the
+[AWS API Visa API](https://github.com/VeteranCrowd/aws-api/blob/dev/lib/networks/visa/api.js)
+for a fully-worked example of usage, including async initialization and logging.
 
 # API Documentation
 
-```js
-import { foo, PACKAGE_INFO } from '@karmaniverous/npm-package-template`;
-```
+## Classes
 
-<a name="foo"></a>
+<dl>
+<dt><a href="#WrappedApi">WrappedApi</a></dt>
+<dd><p>Wraps an Axios instance to provide standard services.</p>
+</dd>
+</dl>
 
-## foo(value) ⇒ <code>any</code>
-Returns whatever value is passed.
+## Typedefs
 
-**Kind**: global function  
-**Returns**: <code>any</code> - Whatever value it was passed.  
+<dl>
+<dt><a href="#WrappedApiError">WrappedApiError</a> : <code>object</code></dt>
+<dd><p>WrappedApi error object.</p>
+</dd>
+<dt><a href="#WrappedApiResponse">WrappedApiResponse</a> : <code>object</code></dt>
+<dd><p>WrappedApi response object.</p>
+</dd>
+</dl>
+
+<a name="WrappedApi"></a>
+
+## WrappedApi
+Wraps an Axios instance to provide standard services.
+
+**Kind**: global class  
+
+* [WrappedApi](#WrappedApi)
+    * _instance_
+        * [.api](#WrappedApi+api) ⇒ <code>object</code>
+        * [.init([config])](#WrappedApi+init) ⇒ [<code>WrappedApi</code>](#WrappedApi)
+    * _static_
+        * [.composeError(e)](#WrappedApi.composeError) ⇒ [<code>WrappedApiError</code>](#WrappedApiError)
+        * [.composeResponse(response)](#WrappedApi.composeResponse) ⇒ [<code>WrappedApiResponse</code>](#WrappedApiResponse)
+
+<a name="WrappedApi+api"></a>
+
+### wrappedApi.api ⇒ <code>object</code>
+Get the [Axios instance](https://axios-http.com/docs/instance).
+
+**Kind**: instance property of [<code>WrappedApi</code>](#WrappedApi)  
+**Returns**: <code>object</code> - [Axios instance](https://axios-http.com/docs/instance).  
+<a name="WrappedApi+init"></a>
+
+### wrappedApi.init([config]) ⇒ [<code>WrappedApi</code>](#WrappedApi)
+Initialize [Axios instance](https://axios-http.com/docs/instance).
+
+**Kind**: instance method of [<code>WrappedApi</code>](#WrappedApi)  
+**Returns**: [<code>WrappedApi</code>](#WrappedApi) - [WrappedApi](#WrappedApi) instance for chaining.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| value | <code>any</code> | Any value. |
+| [config] | <code>object</code> | [Axios config object](https://axios-http.com/docs/req_config). |
+
+<a name="WrappedApi.composeError"></a>
+
+### WrappedApi.composeError(e) ⇒ [<code>WrappedApiError</code>](#WrappedApiError)
+Compose [Axios error](https://axios-http.com/docs/handling_errors) & emit logs.
+
+**Kind**: static method of [<code>WrappedApi</code>](#WrappedApi)  
+**Returns**: [<code>WrappedApiError</code>](#WrappedApiError) - [WrappedApiError](#WrappedApiError) object.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| e | <code>object</code> | [Axios error object](https://axios-http.com/docs/handling_errors). |
+
+<a name="WrappedApi.composeResponse"></a>
+
+### WrappedApi.composeResponse(response) ⇒ [<code>WrappedApiResponse</code>](#WrappedApiResponse)
+Compose [Axios response](https://axios-http.com/docs/res_schema) & emit logs.
+
+**Kind**: static method of [<code>WrappedApi</code>](#WrappedApi)  
+**Returns**: [<code>WrappedApiResponse</code>](#WrappedApiResponse) - [WrappedApiResponse](#WrappedApiResponse) object.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| response | <code>object</code> | [Axios response object](https://axios-http.com/docs/res_schema). |
+| [response.headers] | <code>object</code> | Response headers. |
+| [response.status] | <code>number</code> | Response status code. |
+| [response.statusText] | <code>number</code> | Response status text. |
+| [response.data] | <code>object</code> | Response body. |
+
+<a name="WrappedApiError"></a>
+
+## WrappedApiError : <code>object</code>
+WrappedApi error object.
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| [error] | <code>string</code> | Axios error message. |
+| [response] | <code>object</code> | Received HTTP response. |
+| [response.status] | <code>number</code> | Response status code. |
+| [response.headers] | <code>object</code> | Selected response headers. |
+| [response.data] | <code>object</code> | Response body. |
+| [request] | <code>object</code> | HTTP request body. |
+
+<a name="WrappedApiResponse"></a>
+
+## WrappedApiResponse : <code>object</code>
+WrappedApi response object.
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| [response] | <code>object</code> | Received HTTP response. |
+| [response.status] | <code>number</code> | Response status code. |
+| [response.statusText] | <code>string</code> | Response status text. |
+| [response.headers] | <code>object</code> | Selected response headers. |
+| [response.data] | <code>object</code> | Response body. |
 
 
 ---
