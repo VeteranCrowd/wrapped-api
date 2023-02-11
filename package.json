@@ -16,7 +16,7 @@
   "homepage": "https://github.com/VeteranCrowd/wrapped-api#readme",
   "keywords": [],
   "dependencies": {
-    "@veterancrowd/logger": "github:VeteranCrowd/logger",
+    "@karmaniverous/edge-logger": "^0.0.2",
     "axios": "^1.3.2",
     "lodash": "^4.17.21"
   },
