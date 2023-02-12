@@ -12,7 +12,9 @@
   "editor.tabSize": 2,
   "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.proseWrap": "always",
+  "[markdown]": {
+    "editor.wordWrap": "bounded"
+  },
   "editor.accessibilitySupport": "off",
   "javascript.preferences.importModuleSpecifierEnding": "minimal"
 }
