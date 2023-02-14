@@ -63,7 +63,7 @@ WrappedApi constructor.
 | Param | Type | Description |
 | --- | --- | --- |
 | [options] | <code>object</code> | Options. |
-| [options.logger] | <code>object</code> | Logger instance. |
+| [options.logger] | <code>object</code> | Logger instance (default is [global console object](https://nodejs.org/api/console.html#class-console)). Must have info, error & debug methods |
 
 <a name="module_WrappedApi.WrappedApi+logger"></a>
 
