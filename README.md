@@ -13,6 +13,7 @@ This package wraps an [Axios](https://axios-http.com/docs/intro) instance to pro
         * [.WrappedApi](#module_WrappedApi.WrappedApi)
             * [new exports.WrappedApi([options])](#new_module_WrappedApi.WrappedApi_new)
             * _instance_
+                * [.logger](#module_WrappedApi.WrappedApi+logger) ⇒ <code>object</code>
                 * [.init([config])](#module_WrappedApi.WrappedApi+init) ⇒ <code>WrappedApi</code>
                 * [.request([config])](#module_WrappedApi.WrappedApi+request) ⇒ <code>WrappedApiResponse</code>
                 * [.get([url], [config])](#module_WrappedApi.WrappedApi+get) ⇒ <code>WrappedApiResponse</code>
@@ -39,6 +40,7 @@ Wraps an Axios instance to provide standard logging & services.
 * [.WrappedApi](#module_WrappedApi.WrappedApi)
     * [new exports.WrappedApi([options])](#new_module_WrappedApi.WrappedApi_new)
     * _instance_
+        * [.logger](#module_WrappedApi.WrappedApi+logger) ⇒ <code>object</code>
         * [.init([config])](#module_WrappedApi.WrappedApi+init) ⇒ <code>WrappedApi</code>
         * [.request([config])](#module_WrappedApi.WrappedApi+request) ⇒ <code>WrappedApiResponse</code>
         * [.get([url], [config])](#module_WrappedApi.WrappedApi+get) ⇒ <code>WrappedApiResponse</code>
@@ -63,6 +65,13 @@ WrappedApi constructor.
 | [options] | <code>object</code> | Options. |
 | [options.logger] | <code>object</code> | Logger instance. |
 
+<a name="module_WrappedApi.WrappedApi+logger"></a>
+
+#### wrappedApi.logger ⇒ <code>object</code>
+Get logger instance.
+
+**Kind**: instance property of [<code>WrappedApi</code>](#module_WrappedApi.WrappedApi)  
+**Returns**: <code>object</code> - Logger instance.  
 <a name="module_WrappedApi.WrappedApi+init"></a>
 
 #### wrappedApi.init([config]) ⇒ <code>WrappedApi</code>
