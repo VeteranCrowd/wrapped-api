@@ -16,7 +16,6 @@
   "homepage": "https://github.com/VeteranCrowd/wrapped-api#readme",
   "keywords": [],
   "dependencies": {
-    "@karmaniverous/edge-logger": "^1.0.0",
     "axios": "^1.3.2",
     "lodash": "^4.17.21"
   },
@@ -31,6 +30,7 @@
     "@types/node": "^18.13.0",
     "babel-plugin-lodash": "^3.3.4",
     "chai": "^4.3.7",
+    "chai-match-pattern": "^1.3.0",
     "concat-md": "^0.5.0",
     "eslint": "^8.34.0",
     "eslint-config-standard": "^17.0.0",
@@ -54,7 +54,8 @@
       "./node_modules/**"
     ],
     "require": [
-      "@babel/register"
+      "@babel/register",
+      "chai-match-pattern"
     ],
     "spec": "./**/*.test.!(*.*)"
   },
