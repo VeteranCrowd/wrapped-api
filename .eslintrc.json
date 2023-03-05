@@ -13,8 +13,17 @@
   "ignorePatterns": ["/dist/**/*.*", "*.json"],
   "parser": "@babel/eslint-parser",
   "parserOptions": {
+    "babelOptions": {
+      "plugins": ["@babel/plugin-syntax-import-assertions"]
+    },
     "ecmaVersion": "latest",
+    "requireConfigFile": false,
     "sourceType": "module"
   },
-  "plugins": ["mocha", "promise"]
+  "plugins": ["mocha", "promise"],
+  "rules": {
+    "jsdoc/check-tag-names": "off",
+    "mocha/no-top-level-hooks": "off"
+  },
+  "settings": { "jsdoc": { "mode": "permissive" } }
 }
