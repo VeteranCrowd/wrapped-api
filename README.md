@@ -15,14 +15,14 @@ This package wraps an [Axios](https://axios-http.com/docs/intro) instance to pro
             * _instance_
                 * [.logger](#module_WrappedApi.WrappedApi+logger) ⇒ <code>object</code>
                 * [.init([config])](#module_WrappedApi.WrappedApi+init) ⇒ <code>WrappedApi</code>
-                * [.request([config])](#module_WrappedApi.WrappedApi+request) ⇒ <code>WrappedApiResponse</code>
-                * [.get([url], [config])](#module_WrappedApi.WrappedApi+get) ⇒ <code>WrappedApiResponse</code>
-                * [.delete([url], [config])](#module_WrappedApi.WrappedApi+delete) ⇒ <code>WrappedApiResponse</code>
-                * [.head([url], [config])](#module_WrappedApi.WrappedApi+head) ⇒ <code>WrappedApiResponse</code>
-                * [.options([url], [config])](#module_WrappedApi.WrappedApi+options) ⇒ <code>WrappedApiResponse</code>
-                * [.post([url], [data], [config])](#module_WrappedApi.WrappedApi+post) ⇒ <code>WrappedApiResponse</code>
-                * [.put([url], [data], [config])](#module_WrappedApi.WrappedApi+put) ⇒ <code>WrappedApiResponse</code>
-                * [.patch([url], [data], [config])](#module_WrappedApi.WrappedApi+patch) ⇒ <code>WrappedApiResponse</code>
+                * [.request([config])](#module_WrappedApi.WrappedApi+request) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+                * [.get([url], [config])](#module_WrappedApi.WrappedApi+get) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+                * [.delete([url], [config])](#module_WrappedApi.WrappedApi+delete) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+                * [.head([url], [config])](#module_WrappedApi.WrappedApi+head) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+                * [.options([url], [config])](#module_WrappedApi.WrappedApi+options) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+                * [.post([url], [data], [config])](#module_WrappedApi.WrappedApi+post) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+                * [.put([url], [data], [config])](#module_WrappedApi.WrappedApi+put) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+                * [.patch([url], [data], [config])](#module_WrappedApi.WrappedApi+patch) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
             * _static_
                 * [.composeError(e)](#module_WrappedApi.WrappedApi.composeError) ⇒ <code>WrappedApiError</code>
                 * [.composeResponse(response)](#module_WrappedApi.WrappedApi.composeResponse) ⇒ <code>WrappedApiResponse</code>
@@ -42,14 +42,14 @@ Wraps an Axios instance to provide standard logging & services.
     * _instance_
         * [.logger](#module_WrappedApi.WrappedApi+logger) ⇒ <code>object</code>
         * [.init([config])](#module_WrappedApi.WrappedApi+init) ⇒ <code>WrappedApi</code>
-        * [.request([config])](#module_WrappedApi.WrappedApi+request) ⇒ <code>WrappedApiResponse</code>
-        * [.get([url], [config])](#module_WrappedApi.WrappedApi+get) ⇒ <code>WrappedApiResponse</code>
-        * [.delete([url], [config])](#module_WrappedApi.WrappedApi+delete) ⇒ <code>WrappedApiResponse</code>
-        * [.head([url], [config])](#module_WrappedApi.WrappedApi+head) ⇒ <code>WrappedApiResponse</code>
-        * [.options([url], [config])](#module_WrappedApi.WrappedApi+options) ⇒ <code>WrappedApiResponse</code>
-        * [.post([url], [data], [config])](#module_WrappedApi.WrappedApi+post) ⇒ <code>WrappedApiResponse</code>
-        * [.put([url], [data], [config])](#module_WrappedApi.WrappedApi+put) ⇒ <code>WrappedApiResponse</code>
-        * [.patch([url], [data], [config])](#module_WrappedApi.WrappedApi+patch) ⇒ <code>WrappedApiResponse</code>
+        * [.request([config])](#module_WrappedApi.WrappedApi+request) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+        * [.get([url], [config])](#module_WrappedApi.WrappedApi+get) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+        * [.delete([url], [config])](#module_WrappedApi.WrappedApi+delete) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+        * [.head([url], [config])](#module_WrappedApi.WrappedApi+head) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+        * [.options([url], [config])](#module_WrappedApi.WrappedApi+options) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+        * [.post([url], [data], [config])](#module_WrappedApi.WrappedApi+post) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+        * [.put([url], [data], [config])](#module_WrappedApi.WrappedApi+put) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
+        * [.patch([url], [data], [config])](#module_WrappedApi.WrappedApi+patch) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
     * _static_
         * [.composeError(e)](#module_WrappedApi.WrappedApi.composeError) ⇒ <code>WrappedApiError</code>
         * [.composeResponse(response)](#module_WrappedApi.WrappedApi.composeResponse) ⇒ <code>WrappedApiResponse</code>
@@ -86,11 +86,11 @@ Initialize [Axios instance](https://axios-http.com/docs/instance).
 
 <a name="module_WrappedApi.WrappedApi+request"></a>
 
-#### wrappedApi.request([config]) ⇒ <code>WrappedApiResponse</code>
+#### wrappedApi.request([config]) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
 Send a generic request using the [Axios instance](https://axios-http.com/docs/instance).
 
 **Kind**: instance method of [<code>WrappedApi</code>](#module_WrappedApi.WrappedApi)  
-**Returns**: <code>WrappedApiResponse</code> - [WrappedApiResponse](WrappedApiResponse) object.  
+**Returns**: <code>Promise.&lt;WrappedApiResponse&gt;</code> - [WrappedApiResponse](WrappedApiResponse) object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -98,11 +98,11 @@ Send a generic request using the [Axios instance](https://axios-http.com/docs/in
 
 <a name="module_WrappedApi.WrappedApi+get"></a>
 
-#### wrappedApi.get([url], [config]) ⇒ <code>WrappedApiResponse</code>
+#### wrappedApi.get([url], [config]) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
 Send a GET request using the [Axios instance](https://axios-http.com/docs/instance).
 
 **Kind**: instance method of [<code>WrappedApi</code>](#module_WrappedApi.WrappedApi)  
-**Returns**: <code>WrappedApiResponse</code> - [WrappedApiResponse](WrappedApiResponse) object.  
+**Returns**: <code>Promise.&lt;WrappedApiResponse&gt;</code> - [WrappedApiResponse](WrappedApiResponse) object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -111,11 +111,11 @@ Send a GET request using the [Axios instance](https://axios-http.com/docs/instan
 
 <a name="module_WrappedApi.WrappedApi+delete"></a>
 
-#### wrappedApi.delete([url], [config]) ⇒ <code>WrappedApiResponse</code>
+#### wrappedApi.delete([url], [config]) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
 Send a DELETE request using the [Axios instance](https://axios-http.com/docs/instance).
 
 **Kind**: instance method of [<code>WrappedApi</code>](#module_WrappedApi.WrappedApi)  
-**Returns**: <code>WrappedApiResponse</code> - [WrappedApiResponse](WrappedApiResponse) object.  
+**Returns**: <code>Promise.&lt;WrappedApiResponse&gt;</code> - [WrappedApiResponse](WrappedApiResponse) object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -124,11 +124,11 @@ Send a DELETE request using the [Axios instance](https://axios-http.com/docs/ins
 
 <a name="module_WrappedApi.WrappedApi+head"></a>
 
-#### wrappedApi.head([url], [config]) ⇒ <code>WrappedApiResponse</code>
+#### wrappedApi.head([url], [config]) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
 Send a HEAD request using the [Axios instance](https://axios-http.com/docs/instance).
 
 **Kind**: instance method of [<code>WrappedApi</code>](#module_WrappedApi.WrappedApi)  
-**Returns**: <code>WrappedApiResponse</code> - [WrappedApiResponse](WrappedApiResponse) object.  
+**Returns**: <code>Promise.&lt;WrappedApiResponse&gt;</code> - [WrappedApiResponse](WrappedApiResponse) object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -137,11 +137,11 @@ Send a HEAD request using the [Axios instance](https://axios-http.com/docs/insta
 
 <a name="module_WrappedApi.WrappedApi+options"></a>
 
-#### wrappedApi.options([url], [config]) ⇒ <code>WrappedApiResponse</code>
+#### wrappedApi.options([url], [config]) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
 Send a OPTIONS request using the [Axios instance](https://axios-http.com/docs/instance).
 
 **Kind**: instance method of [<code>WrappedApi</code>](#module_WrappedApi.WrappedApi)  
-**Returns**: <code>WrappedApiResponse</code> - [WrappedApiResponse](WrappedApiResponse) object.  
+**Returns**: <code>Promise.&lt;WrappedApiResponse&gt;</code> - [WrappedApiResponse](WrappedApiResponse) object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -150,11 +150,11 @@ Send a OPTIONS request using the [Axios instance](https://axios-http.com/docs/in
 
 <a name="module_WrappedApi.WrappedApi+post"></a>
 
-#### wrappedApi.post([url], [data], [config]) ⇒ <code>WrappedApiResponse</code>
+#### wrappedApi.post([url], [data], [config]) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
 Send a POST request using the [Axios instance](https://axios-http.com/docs/instance).
 
 **Kind**: instance method of [<code>WrappedApi</code>](#module_WrappedApi.WrappedApi)  
-**Returns**: <code>WrappedApiResponse</code> - [WrappedApiResponse](WrappedApiResponse) object.  
+**Returns**: <code>Promise.&lt;WrappedApiResponse&gt;</code> - [WrappedApiResponse](WrappedApiResponse) object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -164,11 +164,11 @@ Send a POST request using the [Axios instance](https://axios-http.com/docs/insta
 
 <a name="module_WrappedApi.WrappedApi+put"></a>
 
-#### wrappedApi.put([url], [data], [config]) ⇒ <code>WrappedApiResponse</code>
+#### wrappedApi.put([url], [data], [config]) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
 Send a PUT request using the [Axios instance](https://axios-http.com/docs/instance).
 
 **Kind**: instance method of [<code>WrappedApi</code>](#module_WrappedApi.WrappedApi)  
-**Returns**: <code>WrappedApiResponse</code> - [WrappedApiResponse](WrappedApiResponse) object.  
+**Returns**: <code>Promise.&lt;WrappedApiResponse&gt;</code> - [WrappedApiResponse](WrappedApiResponse) object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -178,11 +178,11 @@ Send a PUT request using the [Axios instance](https://axios-http.com/docs/instan
 
 <a name="module_WrappedApi.WrappedApi+patch"></a>
 
-#### wrappedApi.patch([url], [data], [config]) ⇒ <code>WrappedApiResponse</code>
+#### wrappedApi.patch([url], [data], [config]) ⇒ <code>Promise.&lt;WrappedApiResponse&gt;</code>
 Send a PATCH request using the [Axios instance](https://axios-http.com/docs/instance).
 
 **Kind**: instance method of [<code>WrappedApi</code>](#module_WrappedApi.WrappedApi)  
-**Returns**: <code>WrappedApiResponse</code> - [WrappedApiResponse](WrappedApiResponse) object.  
+**Returns**: <code>Promise.&lt;WrappedApiResponse&gt;</code> - [WrappedApiResponse](WrappedApiResponse) object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
